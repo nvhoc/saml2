@@ -265,8 +265,8 @@ get_session_index = (dom) ->
   for attr in authn_statement[0].attributes
     if attr.name is 'SessionIndex'
       return attr.value
-
-  throw new Error("SessionIndex not an attribute of AuthnStatement.")
+  return 0
+#  throw new Error("SessionIndex not an attribute of AuthnStatement.")
 
 # Takes in an xml @dom of an object containing a SAML Assertion and returns and object containing the attributes
 # contained within the Assertion. It will throw an error if the Assertion is missing or does not appear to be valid.
